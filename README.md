@@ -66,13 +66,13 @@ Here, the hashing function is set to the Sedgwicks' hashing method, while collis
 
 #### Chained Hash
 ##### Add
-![alt text](https://github.com/cu-swe4s-fall-2019/hash-tables-qyang13/blob/master/benchmark_plots/sedgwicks_chain_Add_time.png"ascii plot")
+![alt text](https://github.com/cu-swe4s-fall-2019/hash-tables-qyang13/blob/master/benchmark_plots/sedgwicks_chain_Add_time.png "ascii plot")
 ##### Search
 ![alt text](https://github.com/cu-swe4s-fall-2019/hash-tables-qyang13/blob/master/benchmark_plots/sedgwicks_chain_search_time.png "ascii plot")
 
 #### Quadratic Probing
 ##### Add
-![alt text](https://github.com/cu-swe4s-fall-2019/hash-tables-qyang13/blob/master/benchmark_plots/sedgwicks_quadratic_Add_time.png"ascii plot")
+![alt text](https://github.com/cu-swe4s-fall-2019/hash-tables-qyang13/blob/master/benchmark_plots/sedgwicks_quadratic_Add_time.png "ascii plot")
 
 ##### Search
 ![alt text](https://github.com/cu-swe4s-fall-2019/hash-tables-qyang13/blob/master/benchmark_plots/sedgwicks_quadratic_search_time.png "ascii plot")
