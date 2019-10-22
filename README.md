@@ -60,19 +60,25 @@ In contrast, the other two hashing methods,  are able to better evenly hashing t
 Here, the hashing function is set to the Sedgwicks' hashing method, while collision strategies are compared. For additional collision handling plots using different hashing methods (ascii or rolling), please check inside the directory `./benchmark_plots`.
 #### Linear Probing
 ##### Add
+Addition using linear probing suffers from the load factor. The speed is drastically decreased as load factor approaches 1:
 ![alt text](https://github.com/cu-swe4s-fall-2019/hash-tables-qyang13/blob/master/benchmark_plots/sedgwicks_linear_Add_time.png "ascii plot")
 ##### Search
+Similarly, the search time increase dramatically as the load factor approaches 1:
 ![alt text](https://github.com/cu-swe4s-fall-2019/hash-tables-qyang13/blob/master/benchmark_plots/sedgwicks_linear_search_time.png "ascii plot")
 
 #### Chained Hash
 ##### Add
+Different from linear probing, the add speed is not affected by the load factor when using chained hash:
 ![alt text](https://github.com/cu-swe4s-fall-2019/hash-tables-qyang13/blob/master/benchmark_plots/sedgwicks_chain_Add_time.png "ascii plot")
 ##### Search
+Since the elements are inserted more dispersed, the search time varies independent of the load factor.
 ![alt text](https://github.com/cu-swe4s-fall-2019/hash-tables-qyang13/blob/master/benchmark_plots/sedgwicks_chain_search_time.png "ascii plot")
 
 #### Quadratic Probing
 ##### Add
+Because of the more efficient collision handling, adding elements using quadratic probing is much faster than chained hash or linear probing:
 ![alt text](https://github.com/cu-swe4s-fall-2019/hash-tables-qyang13/blob/master/benchmark_plots/sedgwicks_quadratic_Add_time.png "ascii plot")
 
 ##### Search
+The search using quadratic probing is comparable to that of the chained hash. But it does seem to suffer a little more form the laod factor:
 ![alt text](https://github.com/cu-swe4s-fall-2019/hash-tables-qyang13/blob/master/benchmark_plots/sedgwicks_quadratic_search_time.png "ascii plot")
