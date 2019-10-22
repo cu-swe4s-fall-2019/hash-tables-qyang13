@@ -2,6 +2,7 @@
 Implementation of basic hash functions and collision handling strategy
 ## Highlights
 The following features are included in this implementation:
+
 |Hash Functions|
 | --- |
 |Ascii|
