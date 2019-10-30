@@ -76,6 +76,7 @@ class QuadraticProbing:
         self.N = N   # Size of the hash
         self.T = [None for i in range(N)]
         self.M = 0   # Number of elements
+        self.K = []  # Addiitonal array to store key separately
 
     def quadraticProbing(self, pos):
         # limit variable is used to restrict the function from going into
@@ -106,11 +107,13 @@ class QuadraticProbing:
             # empty position found , store the element and print the message
             self.T[hash_slot] = (key, value)
             self.M += 1
+            self.K.append(key.strip('\n'))
         # collision occured hence we do linear probing
         else:
             hash_slot = self.quadraticProbing(hash_slot)
             self.T[hash_slot] = (key, value)
             self.M += 1
+            self.K.append(key.strip('\n'))
         return True
 
     # method that searches for an element in the table
