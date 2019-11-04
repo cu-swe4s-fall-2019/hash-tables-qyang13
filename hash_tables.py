@@ -48,14 +48,18 @@ class ChainHashTable:
         self.N = N
         self.T = [[] for i in range(N)]
         self.M = 0
+        self.K = []  # Addiitonal array to store key separately
+
 
     def add(self, key, value):
         '''
         Function to add key and value to the hash table
         '''
         hash_slot = self.hash(key, self.N)
-        self.T[hash_slot].append((key, value))
+        self.T[hash_slot].append((key, [value]))
         self.M += 1
+        self.K.append(key.strip('\n'))
+
         return True
 
     def search(self, key):
@@ -69,6 +73,17 @@ class ChainHashTable:
                 return v
         return None
 
+    def search_slot(self, key):
+        '''
+        Function to search for key and value in the hash table
+        '''
+        hash_slot = self.hash(key, self.N)
+
+        for k, v in self.T[hash_slot]:
+            if key == k:
+                return hash_slot
+        return None
+
 
 class QuadraticProbing:
     def __init__(self, N, hash_method):
@@ -76,7 +91,6 @@ class QuadraticProbing:
         self.N = N   # Size of the hash
         self.T = [None for i in range(N)]
         self.M = 0   # Number of elements
-        self.K = []  # Addiitonal array to store key separately
 
     def quadraticProbing(self, pos):
         # limit variable is used to restrict the function from going into
@@ -107,13 +121,11 @@ class QuadraticProbing:
             # empty position found , store the element and print the message
             self.T[hash_slot] = (key, value)
             self.M += 1
-            self.K.append(key.strip('\n'))
         # collision occured hence we do linear probing
         else:
             hash_slot = self.quadraticProbing(hash_slot)
             self.T[hash_slot] = (key, value)
             self.M += 1
-            self.K.append(key.strip('\n'))
         return True
 
     # method that searches for an element in the table
