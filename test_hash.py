@@ -36,7 +36,7 @@ class TestHashTables(unittest.TestCase):
         # Testing add
         self.assertEqual(test_case.add('key', 'value'), True)
         # Testing search
-        self.assertEqual(test_case.search('key'), 'value')
+        self.assertEqual(test_case.search('key')[0], 'value')
         # Testing search not exist
         self.assertEqual(test_case.search('wrong_key'), None)
 

@@ -50,7 +50,6 @@ class ChainHashTable:
         self.M = 0
         self.K = []  # Addiitonal array to store key separately
 
-
     def add(self, key, value):
         '''
         Function to add key and value to the hash table
